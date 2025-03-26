@@ -46,10 +46,11 @@ struct PersistenceController {
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                print(error)
             }
         })
+        
+        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump // if any object it duplicate and we want to store it in the database CoreData will restore the existing one and deletes the duplicated one
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
