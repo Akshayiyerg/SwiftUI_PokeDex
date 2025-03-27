@@ -12,9 +12,9 @@ struct FetchedPokemon: Decodable {
     let name: String
     let types: [String]
     let hp: Int16
-    let attacks: Int16
+    let attack: Int16
     let defence: Int16
-    let specialAttacks: Int16
+    let specialAttack: Int16
     let specialDefence: Int16
     let speed: Int16
     let sprite: URL
@@ -46,6 +46,7 @@ struct FetchedPokemon: Decodable {
     }
     
     init(from decoder: any Decoder) throws {
+        
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int16.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
@@ -65,15 +66,15 @@ struct FetchedPokemon: Decodable {
         var decodedStats: [Int16] = []
         var statsContainer = try container.nestedUnkeyedContainer(forKey: .stats)
         while !statsContainer.isAtEnd {
-            let statsDictionaryContainer = try typesContainer.nestedContainer(keyedBy: CodingKeys.StatDictionaryKeys.self)
+            let statsDictionaryContainer = try statsContainer.nestedContainer(keyedBy: CodingKeys.StatDictionaryKeys.self)
             
             let stat = try statsDictionaryContainer.decode(Int16.self, forKey: .baseStat)
             decodedStats.append(stat)
         }
         hp = decodedStats[0]
-        attacks = decodedStats[1]
+        attack = decodedStats[1]
         defence = decodedStats[2]
-        specialAttacks = decodedStats[3]
+        specialAttack = decodedStats[3]
         specialDefence = decodedStats[4]
         speed = decodedStats[5]
         
