@@ -19,15 +19,28 @@ struct ContentView: View {
     let fetcher = FetchService()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(pokedex) { pokemon in
-                    NavigationLink {
-                        Text(pokemon.name ?? "")
-                    } label: {
-                        Text(pokemon.name ?? "")
+                    NavigationLink(value: pokemon) {
+                        AsyncImage(url: pokemon.sprite) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 100, height: 100)
+                        
+                        VStack(alignment: .leading) {
+                            Text(pokemon.name!)
+                        }
                     }
                 }
+            }
+            .navigationTitle("Pokedex")
+            .navigationDestination(for: Pokemon.self) { pokemon in
+                Text(pokemon.name ?? "")
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
