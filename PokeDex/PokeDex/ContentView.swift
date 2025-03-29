@@ -98,6 +98,7 @@ struct ContentView: View {
                     } label: {
                         Label("Filter By Favorites", systemImage: filterByFavorite ? "star.fill" : "star")
                     }
+                    .tint(.yellow)
                 }
                 ToolbarItem {
                     Button("Add Item", systemImage: "plus") {
@@ -126,6 +127,10 @@ struct ContentView: View {
                     pokemon.speed = fetchedPokemon.speed
                     pokemon.sprite = fetchedPokemon.sprite
                     pokemon.shiny = fetchedPokemon.shiny
+                    
+                    if pokemon.id % 2 == 0 {
+                        pokemon.favorite = true
+                    }
                     
                     try viewContext.save()
                 } catch {
