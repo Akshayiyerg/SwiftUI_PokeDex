@@ -17,6 +17,8 @@ struct ContentView: View {
      private var pokedex: FetchedResults<Pokemon>
      */
     
+    @FetchRequest<Pokemon>(sortDescriptors: []) private var all
+    
     @FetchRequest<Pokemon>(
         sortDescriptors: [SortDescriptor(\.id)],
         animation: .default
@@ -46,7 +48,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        if pokedex.isEmpty {
+        if all.isEmpty {
             ContentUnavailableView {
                 Label("No Pokemon", image: .nopokemon)
             } description: {
@@ -112,7 +114,7 @@ struct ContentView: View {
                             }
                         }
                     } footer: {
-                        if pokedex.count < 151 {
+                        if all.count < 151 {
                             ContentUnavailableView {
                                 Label("Missng Pokemon", image: .nopokemon)
                             } description: {
