@@ -137,7 +137,8 @@ struct ContentView: View {
                 .onChange(of: filterByFavorite) {
                     pokedex.nsPredicate = dynamicPredicate
                 }
-                .navigationDestination(for: Pokemon.self) { pokemon in
+                .navigationDestination(for: Pokemon.self) {
+                    pokemon in
                     PokemonDetail()
                         .environmentObject(pokemon)
                 }
