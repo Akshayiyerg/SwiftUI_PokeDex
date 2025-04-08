@@ -16,11 +16,21 @@ struct PokemonDetail: View {
     @State private var showShiny = false
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ZStack {
+                Image(.normalgrasselectricpoisonfairy)
+                    .resizable()
+                    .scaledToFit()
+                    .shadow(color: .black ,radius: 6)
+            }
+        }
+        .navigationTitle(pokemon.name!.capitalized)
     }
 }
 
 #Preview {
-    PokemonDetail()
-        .environmentObject(PersistenceController.previewPokemon)
+    NavigationStack {
+        PokemonDetail()
+            .environmentObject(PersistenceController.previewPokemon)
+    }
 }
