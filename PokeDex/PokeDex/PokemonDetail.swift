@@ -48,7 +48,24 @@ struct PokemonDetail: View {
                         .clipShape(.capsule)
                         
                 }
+                
+                Spacer()
+                
+                Button {
+                    pokemon.favorite.toggle()
+                    
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print(error)
+                    }
+                } label: {
+                    Image(systemName: pokemon.favorite ? "star.fill" : "star")
+                        .font(.largeTitle)
+                        .tint(.yellow)
+                }
             }
+            .padding()
         }
         .navigationTitle(pokemon.name!.capitalized)
     }
