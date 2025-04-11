@@ -9,11 +9,19 @@ import SwiftUI
 import Charts
 
 struct Stats: View {
+    var pokemon: Pokemon
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart(pokemon.stats) { stat in
+            BarMark(
+                x: .value("Value", stat.value),
+                y: .value("Stat", stat.name)
+            )
+            
+        }
     }
 }
 
 #Preview {
-    Stats()
+    Stats(pokemon: PersistenceController.previewPokemon)
 }
