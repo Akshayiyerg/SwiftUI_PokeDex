@@ -17,8 +17,15 @@ struct Stats: View {
                 x: .value("Value", stat.value),
                 y: .value("Stat", stat.name)
             )
+            .annotation(position: .trailing) {
+                Text("")
+            }
             
         }
+        .frame(height: 200)
+        .padding()
+        .foregroundStyle(pokemon.typeColor)
+        .chartXScale(domain: 0...pokemon.highestStat.value + 10)
     }
 }
 
