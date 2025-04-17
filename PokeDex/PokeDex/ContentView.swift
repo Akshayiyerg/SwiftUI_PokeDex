@@ -180,6 +180,23 @@ struct ContentView: View {
                     print(error)
                 }
             }
+            
+            storeSprites()
+        }
+    }
+    
+    private func storeSprites() {
+        Task {
+            do {
+                for pokemon in all {
+                    pokemon.sprite = try await URLSession.shared.data(from: pokemon.spriteURL!).0
+                    pokemon.shiny = try await URLSession.shared.data(from: pokemon.shinyURL!).0
+                    
+                    try viewContext.save()
+                }
+            } catch {
+                print(error)
+            }
         }
     }
 }
