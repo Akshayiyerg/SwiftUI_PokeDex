@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BACA2AD82DB1CEC7004583D5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACA2AD72DB1CEC7004583D5 /* WidgetKit.framework */; };
+		BACA2ADA2DB1CEC7004583D5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACA2AD92DB1CEC7004583D5 /* SwiftUI.framework */; };
+		BACA2AE52DB1CEC9004583D5 /* PokeDexWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BACA2AD52DB1CEC7004583D5 /* PokeDexWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BACA2AE32DB1CEC9004583D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA5D728C2D8B9B7500E3F964 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BACA2AD42DB1CEC7004583D5;
+			remoteInfo = PokeDexWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BACA2AEA2DB1CEC9004583D5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BACA2AE52DB1CEC9004583D5 /* PokeDexWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BA5D72942D8B9B7500E3F964 /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACA2AD52DB1CEC7004583D5 /* PokeDexWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PokeDexWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACA2AD72DB1CEC7004583D5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BACA2AD92DB1CEC7004583D5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BACA2AE62DB1CEC9004583D5 /* Exceptions for "PokeDexWidget" folder in "PokeDexWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BA5D72962D8B9B7500E3F964 /* PokeDex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PokeDex;
+			sourceTree = "<group>";
+		};
+		BACA2ADB2DB1CEC7004583D5 /* PokeDexWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BACA2AE62DB1CEC9004583D5 /* Exceptions for "PokeDexWidget" folder in "PokeDexWidgetExtension" target */,
+			);
+			path = PokeDexWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BACA2AD22DB1CEC7004583D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACA2ADA2DB1CEC7004583D5 /* SwiftUI.framework in Frameworks */,
+				BACA2AD82DB1CEC7004583D5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				BA5D72962D8B9B7500E3F964 /* PokeDex */,
+				BACA2ADB2DB1CEC7004583D5 /* PokeDexWidget */,
+				BACA2AD62DB1CEC7004583D5 /* Frameworks */,
 				BA5D72952D8B9B7500E3F964 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				BA5D72942D8B9B7500E3F964 /* PokeDex.app */,
+				BACA2AD52DB1CEC7004583D5 /* PokeDexWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BACA2AD62DB1CEC7004583D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BACA2AD72DB1CEC7004583D5 /* WidgetKit.framework */,
+				BACA2AD92DB1CEC7004583D5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				BA5D72902D8B9B7500E3F964 /* Sources */,
 				BA5D72912D8B9B7500E3F964 /* Frameworks */,
 				BA5D72922D8B9B7500E3F964 /* Resources */,
+				BACA2AEA2DB1CEC9004583D5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BACA2AE42DB1CEC9004583D5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BA5D72962D8B9B7500E3F964 /* PokeDex */,
@@ -69,6 +143,28 @@
 			productName = PokeDex;
 			productReference = BA5D72942D8B9B7500E3F964 /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BACA2AE72DB1CEC9004583D5 /* Build configuration list for PBXNativeTarget "PokeDexWidgetExtension" */;
+			buildPhases = (
+				BACA2AD12DB1CEC7004583D5 /* Sources */,
+				BACA2AD22DB1CEC7004583D5 /* Frameworks */,
+				BACA2AD32DB1CEC7004583D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BACA2ADB2DB1CEC7004583D5 /* PokeDexWidget */,
+			);
+			name = PokeDexWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = PokeDexWidgetExtension;
+			productReference = BACA2AD52DB1CEC7004583D5 /* PokeDexWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					BA5D72932D8B9B7500E3F964 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					BACA2AD42DB1CEC7004583D5 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				BA5D72932D8B9B7500E3F964 /* PokeDex */,
+				BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BA5D72922D8B9B7500E3F964 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACA2AD32DB1CEC7004583D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BACA2AD12DB1CEC7004583D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BACA2AE42DB1CEC9004583D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */;
+			targetProxy = BACA2AE32DB1CEC9004583D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BA5D72A52D8B9B7700E3F964 /* Debug */ = {
@@ -302,6 +424,60 @@
 			};
 			name = Release;
 		};
+		BACA2AE82DB1CEC9004583D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M99Q25KN7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeDexWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PokeDexWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshayiyerg.PokeDex.PokeDexWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BACA2AE92DB1CEC9004583D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M99Q25KN7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeDexWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PokeDexWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshayiyerg.PokeDex.PokeDexWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +495,15 @@
 			buildConfigurations = (
 				BA5D72A82D8B9B7700E3F964 /* Debug */,
 				BA5D72A92D8B9B7700E3F964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BACA2AE72DB1CEC9004583D5 /* Build configuration list for PBXNativeTarget "PokeDexWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BACA2AE82DB1CEC9004583D5 /* Debug */,
+				BACA2AE92DB1CEC9004583D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
