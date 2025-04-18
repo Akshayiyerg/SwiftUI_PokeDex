@@ -51,11 +51,23 @@
 			);
 			target = BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */;
 		};
+		BACA2B0C2DB1D1B8004583D5 /* Exceptions for "PokeDex" folder in "PokeDexWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				PokeDex.xcdatamodeld,
+				PokemonExt.swift,
+			);
+			target = BACA2AD42DB1CEC7004583D5 /* PokeDexWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BA5D72962D8B9B7500E3F964 /* PokeDex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BACA2B0C2DB1D1B8004583D5 /* Exceptions for "PokeDex" folder in "PokeDexWidgetExtension" target */,
+			);
 			path = PokeDex;
 			sourceTree = "<group>";
 		};
