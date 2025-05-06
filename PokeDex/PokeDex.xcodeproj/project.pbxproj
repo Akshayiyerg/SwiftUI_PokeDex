@@ -55,6 +55,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Persistence.swift,
 				PokeDex.xcdatamodeld,
 				PokemonExt.swift,
 			);
