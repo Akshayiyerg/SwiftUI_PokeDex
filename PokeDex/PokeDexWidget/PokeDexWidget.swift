@@ -56,11 +56,27 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct PokeDexWidgetEntryView : View {
+    
+    @Environment(\.widgetFamily) var widgetSize
     var entry: Provider.Entry
 
+    var pokemonImage: some View {
+        entry.sprite
+            .interpolation(.none)
+            .resizable()
+            .scaledToFit()
+            .shadow(color: .black, radius: 6)
+    }
+    
     var body: some View {
-        VStack {
-            entry.sprite
+        
+        switch widgetSize {
+        case .systemLarge:
+            pokemonImage
+        case .systemMedium:
+            pokemonImage
+        default:
+            pokemonImage
         }
     }
 }
@@ -72,7 +88,7 @@ struct PokeDexWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 PokeDexWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+                    .containerBackground(Color(entry.types[0].capitalized), for: .widget)
             } else {
                 PokeDexWidgetEntryView(entry: entry)
                     .padding()
@@ -85,6 +101,20 @@ struct PokeDexWidget: Widget {
 }
 
 #Preview(as: .systemSmall) {
+    PokeDexWidget()
+} timeline: {
+    SimpleEntry.placeholder
+    SimpleEntry.placeholder2
+}
+
+#Preview(as: .systemMedium) {
+    PokeDexWidget()
+} timeline: {
+    SimpleEntry.placeholder
+    SimpleEntry.placeholder2
+}
+
+#Preview(as: .systemLarge) {
     PokeDexWidget()
 } timeline: {
     SimpleEntry.placeholder
