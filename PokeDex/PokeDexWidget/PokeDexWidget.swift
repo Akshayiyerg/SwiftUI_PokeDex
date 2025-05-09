@@ -74,7 +74,34 @@ struct PokeDexWidgetEntryView : View {
         case .systemLarge:
             pokemonImage
         case .systemMedium:
-            pokemonImage
+            HStack {
+                pokemonImage
+                
+                Spacer()
+                
+                VStack(alignment: .leading) {
+                    Text(entry.name.capitalized)
+                        .font(.title)
+                        .padding(.vertical, 1)
+                    
+                    HStack {
+                        ForEach(entry.types, id: \.self) { type in
+                            Text(type.capitalized)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.black)
+                                .padding(.horizontal, 13)
+                                .padding(.vertical, 5)
+                                .background(Color(type.capitalized))
+                                .clipShape(.capsule)
+                                .shadow(radius: 3)
+                        }
+                    }
+                }
+                .layoutPriority(1)
+                
+                Spacer()
+            }
         default:
             pokemonImage
         }
